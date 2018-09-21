@@ -1,3 +1,26 @@
+
+
+
+
+function crop(image, width, height){
+     var n = new SimpleImage(width,height);
+     for(var p of image.values()){
+   	   var x = p.getX();
+   	   var y = p.getY();
+  	   if (x < width && y < height){
+       var np = n.getPixel(x,y);
+       np.setRed(p.getRed());
+       np.setBlue(p.getBlue());
+       np.setGreen(p.getGreen());
+        }
+     }
+     return n;
+}
+
+
+
+
+
 function clearbits(colorval){
     var x = Math.floor(colorval/16)*16;
     return x;
@@ -35,4 +58,30 @@ function combine(show,hide){
     return answer;
 }
 
+function hidebutton() {
 
+start = new SimpleImage("usain.jpg");
+hide  = new SimpleImage("universe.jpg");
+
+var cropWidth = start.getWidth();
+if (hide.getWidth() < cropWidth) {
+	cropWidth = hide.getWidth();
+};
+
+var cropHeight = start.getHeight();
+if (hide.getHeight() < cropHeight) {
+	cropHeight = hide.getHeight();
+};
+
+start = crop(start,cropWidth, cropHeight);
+hide = crop(hide,cropWidth, cropHeight);
+
+start = crop(start,cropWidth, cropHeight);
+hide = crop(hide,cropWidth, cropHeight);
+
+start = chop2hide(start);
+hide = shift(hide);
+
+var ans = combine(start,hide)
+return ans
+}
