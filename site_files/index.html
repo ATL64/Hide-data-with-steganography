@@ -15,8 +15,6 @@
 
   			 gtag('config', 'UA-125832398-2');
 		</script>
-		<script src="http://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js">
-		</script>
 		<title>Steganography</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -85,12 +83,17 @@
 						<section>
 							<div class="content">
 								<header>
-									<a href="#" class="icon fa-floppy-o"><span class="label">Icon</span></a>
+									<input type="image" src="images/hide.jpg" onclick="hidebutton()" width="120" height="120" />
+
 									<h3>Do the hiding</h3>
 								</header>
 								<p>This will return an image almost identical to the first, but with the secret message.</p>
 							</div>
 						</section>
+
+						<canvas id="canvas1"  width="578" height="200" style="border:0px solid #000000;">
+						</canvas>
+
 						<section>
 							<div class="content">
 								<header>
@@ -141,12 +144,13 @@
 						</section>
 					</div>
 					<div class="copyright">
-						&copy; Untitled. Photos <a href="https://unsplash.co">Unsplash</a>, Video <a href="https://coverr.co">Coverr</a>.
+						&copy; Crowd Lee <a href="https://unsplash.co">Unsplash</a>, Video <a href="https://coverr.co">Coverr</a>.
 					</div>
 				</div>
 			</footer>
 
 		<!-- Scripts -->
+		    <script src="assets/js/dukeSimpleImage.js"></script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
