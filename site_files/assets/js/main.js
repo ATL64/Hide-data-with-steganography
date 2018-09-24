@@ -175,6 +175,15 @@ function shift(image){
     return image;
 }
 
+function unshift(image){
+    for(var px of image.values()){
+        px.setRed((px.getRed()  << (4)) & 0xff);
+        px.setGreen((px.getGreen() << (4)) & 0xff);
+        px.setBlue((px.getBlue() << (4)) & 0xff);
+    }
+    return image;
+}
+
 function combine(show,hide){
     var answer = new SimpleImage(show.getWidth(),show.getHeight());
     for (var px of answer.values()){
@@ -211,9 +220,19 @@ hide = crop(hide,cropWidth, cropHeight);
 start = chop2hide(start);
 hide = shift(hide);
 
-var ans = combine(start,hide)
+var ans = combine(start,hide);
 
-    ans.drawTo(can);
+ans.drawTo(can);
 }
 
+
+function unhidebutton() {
+
+var can = document.getElementById("canvas1");
+
+unhided = unshift(unhide);
+
+unhided.drawTo(can);
+
+}
 
